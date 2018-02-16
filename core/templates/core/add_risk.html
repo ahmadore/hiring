@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            BriteCore
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        
+        <form id="risk" method="POST" action="/core/add/risk/">
+            <label>Title</label>
+            <input type='text' name='title' />
+            
+            <label>Description</label>
+            <input type='textarea' name='description' />
+            
+            <label>Fields <button id='add_field' type='button'>Add</button></label>
+            <table id='field_preview'>
+                <tr>
+                    <td>Name</td>
+                    <td>Description</td>
+                </tr>
+                
+                <tr id='field'></tr>
+            </table>
+        </form>
+        
+        <script type="text/javascript">
+        $('#add_field').click(function(){
+            var field = $('#field');
+            field.html(
+                '<label>Name</label><input type="text" name="name" /> <label>Type</label><select name="type" id="type">' +
+                '<option value="text">Text</option>"'+
+                '<option value="number">Number</option>"'+
+                '<option value="date">Date</option>"'+
+                '<option value="enum">Choice</option>"'+
+                '</select>' +
+                '<span id="ff"></span>'
+                );
+        });
+        
+        $(document).on('change', '#type', function(){
+            var type = $(this).val(),
+                el = $('#ff');
+            if(type=='enum'){
+                el.text('Hoo Hoo');
+            };
+        });
+        </script>
+    </body>
+</html>
