@@ -3,7 +3,7 @@ django-webpack-loader==0.5.0
 djangorestframework==3.7.7
 requests==2.10.0
 six==1.11.0
-urllib3==1.7.1
+urllib3==1.26.5
 wheel==0.30.0
 zappa==0.45.1
 zappa-django-utils==0.3.1
